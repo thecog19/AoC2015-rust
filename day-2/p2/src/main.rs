@@ -1,49 +1,34 @@
-use std::fs::File;
-use std::io::prelude::*;
-use std::path::Path;
 use std::time::{Instant};
+use std::fs;
     
 
 fn main(){
-        let path = Path::new("../input.txt");
-        let display = path.display();
-
-        let mut file = match File::open(&path) {
-            Err(why) => panic!("couldn't open {}: {}", display, why),
-            Ok(file) => file,
-        };
-    
-        let mut input_string = String::new();
-        match file.read_to_string(&mut input_string) {
-            Err(why) => panic!("couldn't read {}: {}", display, why),
-            Ok(_) => (),
-        }
+        let file ="../input.txt";
+        let input_string: String = fs::read_to_string(file).unwrap();
+        let lines = input_string.lines();
+        let lines2 = input_string.lines();
 
         let start = Instant::now();
-        //Part 1!
-        let open_paren = input_string.matches("(").count();
-        let close_paren = input_string.matches(")").count();
+        let mut day_2 = 0;
+        let mut day_1 = 0;
+        for string in lines {
+            let mut dimensions = string.split('x')
+            .map(|n| n.parse::<usize>().unwrap())
+            .collect::<Vec<_>>();
 
-        print!("Result: {}", open_paren - close_paren);
+            dimensions.sort();
+            let length = dimensions[0];
+            let width = dimensions[1];
+            let height = dimensions[2];
+
+            let volume: usize = length*width*height;
+            let smallest_perimiter: usize = length*2 + width*2;
+
+            day_2 += volume + smallest_perimiter;
+            let surface_area: usize = (length*width*2) + (length*height*2) + (height*width*2);
+            day_1 += surface_area + length*width;
+        }
+        print!("day 1: {} day 2: {}", day_1, day_2);
         let end = start.elapsed().as_micros();
         print!("\n execution time in microseconds {}", end);
-
-        //Part 2!
-        let start = Instant::now();
-        let mut total = 0;
-        for (i, c) in input_string.chars().enumerate() {
-            if c == '('   {
-                total += 1;
-            }
-            if c == ')'{
-                total -= 1;
-            }
-
-            if total == -1 {
-                print!("\n Part2: {}", i + 1);
-                let end = start.elapsed().as_micros();
-                print!("\n execution time in microseconds {}", end);
-                return
-            }
-        }
 }

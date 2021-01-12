@@ -42,7 +42,7 @@ fn main(){
             let height = dimensions[2];
 
             let surface_area: usize = (length*width*2) + (length*height*2) + (height*width*2);
-            day_1 += surface_area + length;
+            day_1 += surface_area + length*width;
         }
         print!("\n day 1: {}", day_1);
         let end = start.elapsed().as_micros();

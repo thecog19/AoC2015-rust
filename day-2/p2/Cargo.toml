@@ -1,5 +1,5 @@
 [package]
-name = "aoc_rust_2015_d1"
+name = "aoc_rust_2015_d2"
 version = "0.1.0"
 authors = ["F"]
 edition = "2018"
