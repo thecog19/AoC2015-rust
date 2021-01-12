@@ -5,6 +5,7 @@ use std::time::{Instant};
     
 
 fn main(){
+        let start = Instant::now();
         let path = Path::new("../input.txt");
         let display = path.display();
 
@@ -18,15 +19,14 @@ fn main(){
             Err(why) => panic!("couldn't read {}: {}", display, why),
             Ok(_) => (),
         }
-        let start = Instant::now();
+        
         let mut total = 0;
         // print!("{}", input_string);
         let mut seen = false;
         for (i, c) in input_string.chars().enumerate() {
             if c == '('   {
                 total += 1;
-            }
-            if c == ')'{
+            }else {
                 total -= 1;
             }
 
