@@ -20,10 +20,10 @@ fn file_reader(path:&str) -> Vec<u8>{
 }
 
 fn main(){
+        let start = Instant::now();
         let file ="../input.txt";
         let byte_buffer = file_reader(file);
 
-        let start = Instant::now();
         let mut day_2 = 0;
         let mut day_1 = 0;
         let mut dimensions = vec![];
