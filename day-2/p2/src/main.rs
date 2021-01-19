@@ -3,7 +3,6 @@ use std::fs;
     
 
 fn main(){
-        let start = Instant::now();
         let file ="../input.txt";
         let input_string: String = fs::read_to_string(file).unwrap();
         let lines = input_string.lines();
@@ -12,6 +11,7 @@ fn main(){
         
         let mut day_2 = 0;
         let mut day_1 = 0;
+        let start = Instant::now();
         for string in lines {
             let byte_dimensions = string.as_bytes();
             let mut dimensions = vec![];
