@@ -6,7 +6,7 @@ fn main(){
         let file ="../input.txt";
         let input_string: String = fs::read_to_string(file).unwrap();
 
-        let start = Instant::now();
+        // let start = Instant::now();
   
         let mut santa_1_x = 4000;
         let mut santa_2_x = 4000;
@@ -26,7 +26,7 @@ fn main(){
 
         let mut p1 = 1;
         let mut p2 = 1;
-
+        let start = Instant::now();
         for c in input_string.chars() { 
             if(c == '^'){
                 santa_1_x += 1;

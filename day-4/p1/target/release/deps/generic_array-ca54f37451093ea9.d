@@ -1,0 +1,11 @@
+C:\Users\suero\Documents\Projects\rust-AoC-2015\day-4\p1\target\release\deps\generic_array-ca54f37451093ea9.rmeta: C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\lib.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\hex.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\impls.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\arr.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\iter.rs
+
+C:\Users\suero\Documents\Projects\rust-AoC-2015\day-4\p1\target\release\deps\libgeneric_array-ca54f37451093ea9.rlib: C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\lib.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\hex.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\impls.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\arr.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\iter.rs
+
+C:\Users\suero\Documents\Projects\rust-AoC-2015\day-4\p1\target\release\deps\generic_array-ca54f37451093ea9.d: C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\lib.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\hex.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\impls.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\arr.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\iter.rs
+
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\lib.rs:
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\hex.rs:
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\impls.rs:
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\arr.rs:
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\generic-array-0.9.0\src\iter.rs:
