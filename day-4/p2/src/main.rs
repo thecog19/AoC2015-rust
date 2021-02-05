@@ -5,55 +5,38 @@ use std::str;
 use std::thread;
 use std::thread::JoinHandle;
 
-fn thread_spawner(input_string: String, start: u64, end: u64, p1_done: bool) -> JoinHandle<Option<u64>>{
+fn thread_spawner(input_string: String, start: u64, end: u64, p1_done: bool) -> JoinHandle<(Option<u64>,Option<u64>)>{
     let t = thread::spawn(move || {
 		return calc_hashes(input_string, start, end, p1_done)
     });
     return t
 }
 
-fn calc_hashes(input_string: String, start: u64, end: u64, p1_done: bool) -> Option<u64> {
+fn calc_hashes(input_string: String, start: u64, end: u64, p1_done: bool) -> (Option<u64>,Option<u64>) {
     let res_arr_p1: [u8; 2] = [00; 2]; 
     let res_arr_p2: [u8; 3] = [00; 3];
-    let mut result = None;
+    let mut result1: Option<u64> = None;
+    let mut result2: Option<u64> = None;
     for i in start..end {
         let hash = Md5::digest((input_string.clone().to_string() + &i.to_string()).as_bytes());
-        let mut result: Option<u64> = None;
         let a = hash.as_slice();
-        
-        let mut q = 0;
-        println!("Hash {:?} = {}",i,a[0]);
-        for n in 0..1_000_000 {
-        	q += 1;
-        };
-        q = q - 1_000_000;
-        
-        if a[0] == 0 {
-        	result = Some(i);
-        	break
+        if !p1_done{
+            if  a[0..2] == res_arr_p1{
+                if a[2] < 16 {
+                        result1 = Some(i);
+                        if a[2] == 0 {
+                            result2 = Some(i);
+                            break;
+                    } 
+                }
+            }
         }
-        
-//        if !p1_done{
-//            if  a[0..2] == res_arr_p1{
-//                if a[2] < 16 {
-//                    result = Some(i);
-//                    break
-//                }
-//            }
-//        }
-//        
-//        if a[0..3] == res_arr_p2{
-//            if a[2] < 16 {
-//                result = Some(i);
-//                break
-//            }
-//        }
     }
-    return result;
+    return (result1, result2);
 }
 fn main(){
        
-        let file ="../Inputs/Day4Input.txt";
+        let file ="../input.txt";
         let mut input_string: String = fs::read_to_string(file).unwrap();
         let start = Instant::now();
         input_string.truncate(input_string.len() - 1); 
@@ -61,12 +44,12 @@ fn main(){
         let mut p1_done = false;
         let chunk_size = 1000;
         let mut offset = 0;
-        let mut answer: u64 = 0;
-		loop { 
-			println!("Current offset: {}; current answer: {}",offset, answer);
+        let mut answer1: u64 = 0;
+        let mut answer2: u64 = 0;
+		'outer: loop { 
+			// println!("Current offset: {}; current answer: {}",offset, answer);
             let mut children = vec![];
-            while i < 1 {
-                //t = thread_spawner(&input_string, i*chunk_size+offset, (i+1)*chunk_size + offset, p1_done);
+            while i < 100 {
                 let t = thread_spawner(input_string.to_string(), i*chunk_size+offset, (i+1)*chunk_size+offset, p1_done);
                 children.push(t);
                 i += 1;
@@ -75,16 +58,30 @@ fn main(){
             for child in children {
                 let curr = child.join();
                 match curr {
-                	Ok(option) => 
-                		match option {
-                	        Some(result) => println!("Result: {}",result),
+                    Ok(options) => {
+                        //https://doc.rust-lang.org/reference/expressions/tuple-expr.html
+                		match options.0 {
+                	        Some(result) =>  {
+                                            if result < answer1 || answer1 == 0 {
+                                                answer1 = result;
+                                            }
+                            }
                 			None => continue
-                		},
+                        };
+                        match options.1 {
+                	        Some(result) =>  {
+                                            if result < answer2 || answer2 == 0 {
+                                                answer2 = result;
+                                            }
+                            }
+                			None => continue
+                        };
+                    }
                 	Err(option) => panic!()
                 }
             }
             
-            if answer == 0 {
+            if answer2 == 0 {
 		        offset += i*chunk_size;
 		        i = 0;
             } else {
@@ -92,6 +89,7 @@ fn main(){
             }
         }
         let end = start.elapsed().as_micros();
-        println!("Part 1: {}",answer);
+        println!("Part 1: {}",answer1);
+        println!("Part 2: {}",answer2);
         println!("\n execution time in microseconds {}", end);
 }
