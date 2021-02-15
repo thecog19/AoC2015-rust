@@ -24,7 +24,7 @@ fn calc_hashes(input_string: String, start: u64, end: u64, p1_done: bool) -> (Op
             if  a[0..2] == res_arr_p1{
                 if a[2] < 16 {
                         result1 = Some(i);
-                        if a[2] == 0 {
+                        if a[2] == 0{
                             result2 = Some(i);
                             break;
                     } 
@@ -42,14 +42,14 @@ fn main(){
         input_string.truncate(input_string.len() - 1); 
         let mut i: u64 = 0;
         let mut p1_done = false;
-        let chunk_size = 1000;
+        let chunk_size = 100_000;
         let mut offset = 0;
         let mut answer1: u64 = 0;
         let mut answer2: u64 = 0;
 		'outer: loop { 
 			// println!("Current offset: {}; current answer: {}",offset, answer);
             let mut children = vec![];
-            while i < 100 {
+            while i < 16 {
                 let t = thread_spawner(input_string.to_string(), i*chunk_size+offset, (i+1)*chunk_size+offset, p1_done);
                 children.push(t);
                 i += 1;

@@ -1,0 +1,8 @@
+[package]
+name = "aoc_rust_2015_d5"
+version = "0.1.0"
+authors = ["F"]
+edition = "2018"
+
+[dependencies]
+md-5 = "0.7.0"
