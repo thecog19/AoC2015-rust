@@ -1,0 +1,11 @@
+C:\Users\suero\Documents\Projects\rust-AoC-2015\day-6\p1\target\release\deps\byte_tools-3dcff74610b9a703.rmeta: C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\lib.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\read_single.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\write_single.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\read_slice.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\write_slice.rs
+
+C:\Users\suero\Documents\Projects\rust-AoC-2015\day-6\p1\target\release\deps\libbyte_tools-3dcff74610b9a703.rlib: C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\lib.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\read_single.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\write_single.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\read_slice.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\write_slice.rs
+
+C:\Users\suero\Documents\Projects\rust-AoC-2015\day-6\p1\target\release\deps\byte_tools-3dcff74610b9a703.d: C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\lib.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\read_single.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\write_single.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\read_slice.rs C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\write_slice.rs
+
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\lib.rs:
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\read_single.rs:
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\write_single.rs:
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\read_slice.rs:
+C:\Users\suero\.cargo\registry\src\github.com-1ecc6299db9ec823\byte-tools-0.2.0\src\write_slice.rs:
